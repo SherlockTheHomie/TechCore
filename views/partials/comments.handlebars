@@ -1,0 +1,14 @@
+  {{#if article.comments.length}}
+  <div class="col-md-6 project-list">
+    <h3>Comments:</h3>
+
+  {{#each article.comments as |article|}}
+  
+  <div class="row mb-2">
+    <div class="row md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{article.id}}">comment</button>
+    </div>
+</div>
+{{/each}}
+</div>
+{{/if}}

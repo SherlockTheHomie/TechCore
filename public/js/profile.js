@@ -22,7 +22,7 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
+  if (event.target.hasAttribute('data-id') && event.target.matches("#deletebtn")) {
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/article/${id}`, {
@@ -37,9 +37,36 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const updateButtonHandler = async (event) => {
+    event.preventDefault();
+  const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/article/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: document.getElementById('edit-project-title').value,
+        description: document.getElementById('edit-project-desc').value,
+      }),
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to update article');
+    }
+};
+
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
+
+document
+  .querySelector('#updatebutton')
+  .addEventListener('click', updateButtonHandler);  
 
 document
   .querySelector('.project-list')

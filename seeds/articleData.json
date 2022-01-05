@@ -1,17 +1,21 @@
 [
     {
+      "id": 1,
       "title": "Music Near Me",
       "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
     },
     {
+      "id": 2,
       "title": "The Ultimate Tech Quiz",
       "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
     },
     {
+      "id": 3,
       "title": "Roll 'Em Up",
       "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
     },
     {
+      "id": 4,
       "title": "Jahquery Lives",
       "description": "Never underestimate the power of the jahquery, it holds all the cards, and hides all the keys. America will never be free as long as we are under the rule of Jahquery."
     }
