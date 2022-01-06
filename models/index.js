@@ -11,10 +11,12 @@ Article.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Article.hasMany(Comment);
-
-Comment.belongsTo(Article, {
+Article.hasMany(Comment, {
   foreignKey: 'article_id'
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
 module.exports = { User, Article, Comment };

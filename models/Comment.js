@@ -5,11 +5,15 @@ class Comment extends Model { }
 
 Comment.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     primaryKey: true,
+        //     autoIncrement: true,
+        // },
+        comment: {
+            type: DataTypes.STRING(200),
             allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
         },
         article_id: {
             type: DataTypes.INTEGER,
@@ -17,10 +21,6 @@ Comment.init(
                 model: 'article',
                 key: 'id',
             },
-        },
-        comment: {
-            type: DataTypes.STRING(200),
-            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
